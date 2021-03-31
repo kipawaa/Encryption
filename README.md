@@ -1,9 +1,9 @@
 #Encryption
 This is a repo of all of my encryption-related projects!
 
-Currently includes:
+## Currently includes:
 * Diffie-Hellman Key Exchange
 
-Upcoming:
+## Upcoming:
 * RSA Encryption
 * Lattice based RSA?
