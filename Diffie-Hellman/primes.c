@@ -1,8 +1,7 @@
-#include<math.h>
-#include<stdlib.h>
+#include"primes.h"
 
 // checks if a number is prime
-int is_prime(int n) {
+int is_prime(int num) {
         // nothing less than 2 is prime
         if (num < 2) return 0;
         
@@ -10,8 +9,8 @@ int is_prime(int n) {
         if (num == 2) return 1;
         
         // check all odd numbers in [3, sqrt(n)]
-        for (int i = 3; i < ceil(sqrt(n)); i += 2) {
-                if (n % i == 0) return 0;
+        for (int i = 3; i < ceil(sqrt(num)); i += 2) {
+                if (num % i == 0) return 0;
         }
         
         return 1;

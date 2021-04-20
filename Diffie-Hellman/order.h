@@ -1,3 +1,6 @@
+#include<math.h>
+#include"phi.h"
+
 /*
    returns the order of a mod n, 0 if a and n are not coprime
 

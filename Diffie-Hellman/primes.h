@@ -1,3 +1,7 @@
+#include<stdlib.h>
+#include<math.h>
+
+
 /*
    returns a prime at least as big as min
 

@@ -1,3 +1,6 @@
+#include<stdlib.h>
+#include"order.h"
+
 /*
    returns 1 if a is a primitive root mod n
 */

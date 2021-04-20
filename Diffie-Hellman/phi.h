@@ -1,3 +1,6 @@
+#include"coprime.h"
+#include<math.h>
+
 /*
    Euler's phi (totient) function
 

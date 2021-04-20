@@ -1,6 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include"coprime.h"
 
 int max(int a, int b) {
         return a ? a > b : b;
