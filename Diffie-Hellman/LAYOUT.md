@@ -4,5 +4,6 @@ The following is the layout of the program:
   - primes.h
   - primitive_roots.h
     - order.h
+      - exponentiation.h
       - phi.h
         - coprime.h
