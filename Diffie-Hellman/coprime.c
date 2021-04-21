@@ -20,9 +20,9 @@ int coprime(int a, int b) {
         int m = min(a, b);
         int M = max(a, b);
 
-        for (int i = 1; i < m; i++) {
-                if (i * M % m == 1) return 1;
+        for (int i = 2; i <= m; i++) {
+                if (M % i == 0 && m % i == 0) return 0;
         }
 
-        return 0;
+        return 1;
 }
