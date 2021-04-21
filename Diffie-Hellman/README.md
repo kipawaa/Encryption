@@ -6,4 +6,5 @@ The code here is very... modular... since much of what is written here is helpfu
 
 ## TODO
 - improve prime generation
+- set up connection over networks
 
