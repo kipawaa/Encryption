@@ -33,5 +33,18 @@ int main() {
         int base = get_public_base(mod);
 
         printf("modulus: %d, base: %d\n", mod, base);
+
+        int num = mod_exp(base, rand(), mod);
+
+        printf("share the number: %d\n", num);
+
+        int friend;
+
+        printf("input your friend's number: ");
+        scanf("%d", &friend);
+
+        int key = mod_exp(friend, num, mod);
+
+        printf("you and your friend have secretly communicated the key: %d\n", key);
         
 }
