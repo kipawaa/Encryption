@@ -2,6 +2,6 @@
 #include"order.h"
 
 /*
-   returns 1 if a is a primitive root mod n
+   returns a primitive root mod p where p is prime
 */
-int is_primitive_root(int a, int n);
+int get_primitive_root(int p);
