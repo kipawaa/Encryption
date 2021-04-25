@@ -26,7 +26,7 @@ int main() {
         memset((&serverAddress.sin_zero), 0, 8);
 
         // ask user for their friend's IP
-        char* serverIP;
+        char* serverIP = "";
         printf("please input your friend's IP: ");
         scanf("%s", serverIP);
 

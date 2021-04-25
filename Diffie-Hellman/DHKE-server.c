@@ -6,6 +6,7 @@
 #include<sys/socket.h> // make sockets work
 #include<netinet/in.h> // make internets work
 #include<arpa/inet.h> // apparently necessary for macOS??
+#include<netdb.h>
 
 #include"DHKE-server.h"
 
@@ -37,6 +38,21 @@ int main() {
                 perror("binding error");
                 exit(2);
         }
+
+        // print our IP so that we can share it with a friend
+        struct hostent* host;
+        char* hostName = NULL;
+        error = gethostname(hostName, 256 * sizeof(char));
+        if (error) {
+                perror("host name error");
+                exit(1);
+        }
+        host = gethostbyname(hostName);
+        if (!host) {
+                perror("host error");
+                exit(1);
+        }
+        printf("hosting server on IP: %s\n", inet_ntoa(*((struct in_addr*) host -> h_addr_list[0])));
 
         // listen for clients, up to 5 in backlog
         error = listen(serverSocket, 5);
