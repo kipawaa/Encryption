@@ -25,6 +25,14 @@ int main() {
         serverAddress.sin_port = htons(52958);
         memset((&serverAddress.sin_zero), 0, 8);
 
+        // ask user for their friend's IP
+        char* serverIP;
+        printf("please input your friend's IP: ");
+        scanf("%s", serverIP);
+
+        // set the IP
+        serverAddress.sin_addr.s_addr = inet_addr(serverIP);
+
         // connect to the server
         error = connect(clientSocket, (struct sockaddr *) &serverAddress, sizeof(struct sockaddr_in));
 
