@@ -39,33 +39,16 @@ int main() {
                 exit(2);
         }
 
-        // print our IP so that we can share it with a friend
-        struct hostent* host;
-        char* hostName = NULL;
-        error = gethostname(hostName, 256 * sizeof(char));
-        if (error) {
-                perror("host name error");
-                exit(1);
-        }
-        host = gethostbyname(hostName);
-        if (!host) {
-                perror("host error");
-                exit(1);
-        }
-        printf("hosting server on IP: %s\n", inet_ntoa(*((struct in_addr*) host -> h_addr_list[0])));
-
-        // listen for clients, up to 5 in backlog
-        error = listen(serverSocket, 5);
-        
+        // listen for clients
+        error = listen(serverSocket, 1);
         if (error < 0) {
                 perror("listen error");
-                exit(3);
+                exit(1);
         }
 
         // create a struct to store the address of the client
         struct sockaddr_in clientSocketAddress;
         clientSocketAddress.sin_family = AF_INET;
-
 
         // accept a connection
         unsigned int clientAddressLength = sizeof(struct sockaddr_in);
